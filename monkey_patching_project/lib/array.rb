@@ -6,7 +6,7 @@ class Array
 
     def average
         if  !self.empty?
-            self.sum / (self.length * 1.0)
+            self.sum / self.length.to_f
         else
             nil
         end
@@ -43,8 +43,8 @@ class Array
     end
 
     def my_transpose
-        out=[]
-        self.each { |ele,i| ele.each_with_index { |ele2,j| out << out[i][j] << ele2    }}
+        out= Array.new(self.length) {Array.new(self.length)}
+        (0...self.length).each { |i| (0...self.length).each { |j| out[j][i] = self[i][j]    }}
         out
     end
 
