@@ -44,7 +44,7 @@ class Array
 
     def my_transpose
         out= Array.new(self.length) {Array.new(self.length)}
-        (0...self.length).each { |i| (0...self.length).each { |j| out[j][i] = self[i][j]    }}
+        (0...self.length).each { |i| (0...self.length).each { |j| out[j][i] = self[i][j] }}
         out
     end
 
