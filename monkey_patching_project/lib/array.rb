@@ -27,4 +27,25 @@ class Array
         self.tally
     end
 
+    def my_count(arg)
+        counter=0
+        self.each { |ele| counter += 1 if arg == ele}
+        counter
+    end 
+
+    def my_index(arg)
+        self.each_with_index { |ele,i| return i  if ele == arg}
+       return nil
+    end
+
+    def my_uniq
+        self | self
+    end
+
+    def my_transpose
+        out=[]
+        self.each { |ele,i| ele.each_with_index { |ele2,j| out << out[i][j] << ele2    }}
+        out
+    end
+
 end
